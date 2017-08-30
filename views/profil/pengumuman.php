@@ -40,12 +40,12 @@ $this->params['breadcrumbs'][] = $this->title;
 	        	['class' => 'yii\grid\SerialColumn'],
 
 		        'no_peserta',
-		        /*'nama',
+		        'nama',
 
 		        [
 		        	'attribute' => 'nama_sekolah',
 		        	'label' => 'Asal Sekolah',
-		        ],*/
+		        ],
 		        [
 		        	'attribute' => 'pengumuman',
 		        	'label' => 'Keterangan',
@@ -53,4 +53,8 @@ $this->params['breadcrumbs'][] = $this->title;
 	    	]
 	    ]); ?>
 	<?php Pjax::end(); ?>
-</div></div>
+</div>
+<hr />
+<?= Html::a('<i class="fa fa-download"></i> Unduh Pengumuman Lengkap', ['/PENGUMUMAN '.Yii::$app->user->identity->tingkat.'.pdf'], ['class' => 'btn btn-success', 'download' =>  'PENGUMUMAN '.Yii::$app->user->identity->tingkat.'.pdf']) ?>
+
+</div>

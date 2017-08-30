@@ -49,9 +49,9 @@ class AdminLolos_Search extends User
         if ($pengumuman == 'all' && $tingkat == 'ADMIN') {
             $query = User::find()->where(['!=', 'tingkat' ,$tingkat])->andWhere(['!=', 'jenis_pendaftaran', '_OFFLINE'])
                 ->andWhere(['status' => 10]);
-        } elseif ($pengumuman == '-') {
+        } elseif ($pengumuman == 'LOLOS') {
             $query = User::find()->where(['tingkat' => $tingkat])->andWhere(['!=', 'jenis_pendaftaran', '_OFFLINE'])
-                ->andWhere(['status' => 10]);
+                ->andWhere(['status' => 10])->andWhere(['pengumuman' => 'LOLOS'])->orderBy('nama ASC');
         } elseif ($pengumuman <= 1) {
             $query = User::find()->where(['tingkat' => $tingkat])->andWhere(['!=', 'jenis_pendaftaran', '_OFFLINE'])
                 ->andWhere(['status' => 10])->andWhere(['pengumuman' => 'LOLOS']);

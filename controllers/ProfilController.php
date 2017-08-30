@@ -265,7 +265,7 @@ class ProfilController extends Controller
         }
 
         $searchModel  = new AdminLolos_Search();
-        $dataProvider =  $searchModel->search(Yii::$app->request->queryParams, '-', Yii::$app->user->identity->tingkat);
+        $dataProvider =  $searchModel->search(Yii::$app->request->queryParams, 'LOLOS', Yii::$app->user->identity->tingkat);
 
         return $this->render('pengumuman', [
             'searchModel'  => $searchModel,
